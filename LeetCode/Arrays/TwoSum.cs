@@ -61,7 +61,7 @@ namespace LeetCode.Easy
             }
             return [];
         }
-        
+
         //Time complexity O(n)
         //Space complexity O(n)
         public static int[] UsingHashTableAndComplement(int[] nums, int target)
@@ -78,9 +78,9 @@ namespace LeetCode.Easy
                 {
                     return [complementDictionary[nums[i]], i];
                 }
-                complementDictionary[complement] = i;     
+                complementDictionary[complement] = i;
             }
-            
+
             return [];
         }
     }
