@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace LeetCode.SlidingWindows;
 
@@ -22,6 +23,33 @@ public static class StartOfMessageMarker
      * See video: https://www.youtube.com/watch?v=Rxd3W1wnlEc
      */
     const int WindowsSize = 14;
+
+    public static int FindStartOfMessageIndex_BitMask(string s)
+    {
+        const int binaryOne = 0b1;
+        const int maskSize = 32;
+        var mask = 0b0;
+        var left = 0;
+
+        for (var i = 0; i < WindowsSize; i++)
+        {
+            var bitPosition = s[i] % maskSize;
+            var bitShifted = binaryOne << bitPosition;
+            mask ^= bitShifted;
+        }
+
+        while (BitOperations.PopCount((uint)mask) != WindowsSize)
+        {
+            var leftCharPosition = s[left] % maskSize;
+            var rightCharPosition = s[left+WindowsSize] % maskSize;
+            var excludeLeftShifted = binaryOne << leftCharPosition;
+            var includeRightShifted = binaryOne << rightCharPosition;
+            mask = mask ^ excludeLeftShifted ^ includeRightShifted;
+            left++;
+        }
+
+        return left + WindowsSize;
+    }
 
     public static int FindStartOfMessageIndex(string s)
     {
@@ -106,7 +134,7 @@ public static class StartOfMessageMarker
     public static int FindStartOfMessageIndex_StaticArray_NoSubstring(string s)
     {
         if (s.Length == WindowsSize) return WindowsSize;
-    
+
         var metCharacters = new char[WindowsSize];
         var left = 0;
         var totalLoopIterations = 0;

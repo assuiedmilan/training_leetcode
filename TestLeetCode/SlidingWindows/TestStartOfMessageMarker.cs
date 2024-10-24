@@ -26,6 +26,7 @@ public class TestStartOfMessageMarker
         yield return new TestCaseData((Func<string, int>)StartOfMessageMarker.FindStartOfMessageIndex).SetName("HashSet_RestartFromRightMostDuplicate");
         yield return new TestCaseData((Func<string, int>)StartOfMessageMarker.FindStartOfMessageIndex_StaticArray).SetName("StaticArray");
         yield return new TestCaseData((Func<string, int>)StartOfMessageMarker.FindStartOfMessageIndex_StaticArray_NoSubstring).SetName("StaticArray no use of substring");
+        yield return new TestCaseData((Func<string, int>)StartOfMessageMarker.FindStartOfMessageIndex_BitMask).SetName("BitMask");
     }
 
     public static IEnumerable<TestCaseData> CombinedCases()
