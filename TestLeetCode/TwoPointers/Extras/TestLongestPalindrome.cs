@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using LeetCode.TwoPointers;
+using LeetCode.TwoPointers.Extras;
 using NUnit.Framework;
 
-namespace TestLeetCode.TwoPointers;
+namespace TestLeetCode.TwoPointers.Extras;
 
 public class TestLongestPalindrome
 {

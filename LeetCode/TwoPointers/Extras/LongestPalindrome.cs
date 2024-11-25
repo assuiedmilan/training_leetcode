@@ -1,4 +1,4 @@
-﻿namespace LeetCode.TwoPointers;
+﻿namespace LeetCode.TwoPointers.Extras;
 
 /*
  * Given a string s, return the longest
