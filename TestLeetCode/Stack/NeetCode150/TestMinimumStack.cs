@@ -1,41 +1,44 @@
-﻿using LeetCode.Stack.NeetCode150;
+﻿using System.Collections.Generic;
+using LeetCode.Stack.NeetCode150;
+using NUnit.Framework;
 
-namespace Sandbox;
+namespace TestLeetCode.Stack.NeetCode150;
 
-public class Program
+public class TestMinimumStack
 {
-    static void Main(string[] args)
+    [Test]
+    public void TestBaseCase()
     {
         string[] commands = ["MinStack", "push", "push", "push", "top", "pop", "getMin", "pop", "getMin", "pop", "push", "top", "getMin", "push", "top", "getMin", "pop", "getMin"];
         List<int>[] commandsValues = [[], [2147483646], [2147483646], [2147483647], [], [], [], [], [], [], [2147483647], [], [], [-2147483648], [], [], [], []];
         int?[] expectedValues = [null,null,null,null,2147483647,null,2147483646,null,2147483646,null,null,2147483647,2147483647,null,-2147483648,-2147483648,null,2147483647];
-        
+
+        Check(commands, commandsValues, expectedValues);
+    }
+
+    static void Check(string[] commands, List<int>[] commandsValues, int?[] expectedValues)
+    {
         var testObj = new MinStack();
 
-        for(var i = 0; i < commands.Length - 1; i++)
+        for(var i = 0; i < commands.Length; i++)
         {
             var command = commands[i];
 
             switch (command)
             {
                 case "MinStack": 
-                    testObj = new MinStack();
                     break;
                 case "push": 
                     testObj.Push(commandsValues[i][0]);
                     break;
                 case "top":
-                    var top = testObj.Top();
-                    Console.Out.WriteLine($"Top: {top}, expected: {expectedValues[i]}");
-                    Console.Out.WriteLine($"Top: is as expected {top == expectedValues[i]}");
+                    Assert.That(testObj.Top(), Is.EqualTo(expectedValues[i]!));
                     break;
                 case "pop":
                     testObj.Pop();
                     break;
                 case "getMin":
-                    var min = testObj.GetMin();
-                    Console.Out.WriteLine($"Min: {min}, expected: {expectedValues[i]}");
-                    Console.Out.WriteLine($"Min: is as expected {min == expectedValues[i]}");
+                    Assert.That(testObj.GetMin(), Is.EqualTo(expectedValues[i]!));
                     break;                
             }
         }
