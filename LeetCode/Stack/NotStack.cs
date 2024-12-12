@@ -34,7 +34,7 @@ public class NotStack
         {
             var arrays = Solution(previous);
 
-            List<string> newArrays = new();
+            HashSet<string> newArrays = new();
 
             foreach (var s in arrays)
             {
@@ -52,7 +52,7 @@ public class NotStack
                 }
             }
 
-            return newArrays.Distinct().ToArray();
+            return newArrays.ToArray();
         }
 
         result += open;
