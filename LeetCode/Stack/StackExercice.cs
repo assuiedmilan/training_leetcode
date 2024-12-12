@@ -7,11 +7,7 @@ public class StackExercice
 {
     public StackExercice()
     {
-        //["4", "5", "3", "/", "2", "+", "-" ]
-
         Console.WriteLine(Solution(["4", "5", "3", "/", "2", "+", "-" ]));
-
-
     }
 
     public int Solution(string[] calculatricePolonaiseInverse)
