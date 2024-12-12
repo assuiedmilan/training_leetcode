@@ -38,16 +38,12 @@ public class NotStack
 
             foreach (var s in arrays)
             {
-                var newString = s;
-                var newString2 = s;
                 for (int i = 0; i < s.Length-1; i++)
                 {
                     if (s[i] == open && s[i + 1] == close)
                     {
-                        newString = s.Insert(i, ""+open+close);
-                        newString2 = s.Insert(i+1, ""+open+close);
-                        newArrays.Add(newString);
-                        newArrays.Add(newString2);
+                        newArrays.Add(s.Insert(i, "" + open + close));
+                        newArrays.Add(s.Insert(i+1, "" + open + close));
                     }
                 }
             }
