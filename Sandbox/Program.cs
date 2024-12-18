@@ -8,8 +8,13 @@ public class Program
     static void Main(string[] args)
     {
 
-        var testObj = new GenerateParenthesis();
-        testObj.Solution(3);
+        var testObj = new CombinationSum();
+        var result = testObj.Solution([2, 3, 6, 7], 7);
+
+        foreach (var list in result)
+        {
+            Console.WriteLine(string.Join(", ", list));
+        }
 
     }
 }
