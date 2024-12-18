@@ -1,4 +1,5 @@
-﻿using LeetCode.Stack.NeetCode150;
+﻿using LeetCode.Backtracking;
+using LeetCode.Stack.NeetCode150;
 
 namespace Sandbox;
 
@@ -6,38 +7,9 @@ public class Program
 {
     static void Main(string[] args)
     {
-        string[] commands = ["MinStack", "push", "push", "push", "top", "pop", "getMin", "pop", "getMin", "pop", "push", "top", "getMin", "push", "top", "getMin", "pop", "getMin"];
-        List<int>[] commandsValues = [[], [2147483646], [2147483646], [2147483647], [], [], [], [], [], [], [2147483647], [], [], [-2147483648], [], [], [], []];
-        int?[] expectedValues = [null,null,null,null,2147483647,null,2147483646,null,2147483646,null,null,2147483647,2147483647,null,-2147483648,-2147483648,null,2147483647];
-        
-        var testObj = new MinStack();
 
-        for(var i = 0; i < commands.Length - 1; i++)
-        {
-            var command = commands[i];
+        var testObj = new GenerateParenthesis();
+        testObj.Solution(3);
 
-            switch (command)
-            {
-                case "MinStack": 
-                    testObj = new MinStack();
-                    break;
-                case "push": 
-                    testObj.Push(commandsValues[i][0]);
-                    break;
-                case "top":
-                    var top = testObj.Top();
-                    Console.Out.WriteLine($"Top: {top}, expected: {expectedValues[i]}");
-                    Console.Out.WriteLine($"Top: is as expected {top == expectedValues[i]}");
-                    break;
-                case "pop":
-                    testObj.Pop();
-                    break;
-                case "getMin":
-                    var min = testObj.GetMin();
-                    Console.Out.WriteLine($"Min: {min}, expected: {expectedValues[i]}");
-                    Console.Out.WriteLine($"Min: is as expected {min == expectedValues[i]}");
-                    break;                
-            }
-        }
     }
 }
