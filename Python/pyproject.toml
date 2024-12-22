@@ -1,0 +1,36 @@
+[build-system]
+requires = ["poetry_core>=1.1.4"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "training-leetcode"
+version = "0.1.0"
+description = "A project for leetcode problems in Python"
+authors = ["Milan Assuied"]
+repository = "https://github.com/assuiedmilan/training_leetcode"
+
+packages = [
+    { include = "leetcode", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.dev-dependencies]
+more_itertools = "*"
+pylint = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-lazy-fixtures = "*"
+pytest-mock = "*"
+
+[tool.poetry.extras]
+docs = ["Sphinx", "sphinx-rtd-theme", "sphinxcontrib-napoleon"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -v --junitxml=results.xml"
+testpaths = [
+    "tests",
+]
+junit_logging = "all"

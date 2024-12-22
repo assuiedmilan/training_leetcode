@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode.Arrays.Extras;
 
 public class PlusOne
