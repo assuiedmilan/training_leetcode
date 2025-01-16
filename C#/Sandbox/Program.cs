@@ -1,6 +1,5 @@
-﻿using LeetCode.Backtracking;
-using LeetCode.Backtracking.Extras;
-using LeetCode.Stack.NeetCode150;
+﻿using System.Collections;
+using LeetCode.Bitmasks.Extras;
 
 namespace Sandbox;
 
@@ -8,14 +7,28 @@ public class Program
 {
     static void Main(string[] args)
     {
+        var testObj = new MinimizeXor();
+        const int firstArg = 3;
+        const int secondArg = 5;
 
-        var testObj = new CombinationSum();
-        var result = testObj.Solution([2, 3, 6, 7], 7);
-
-        foreach (var list in result)
+        var x = testObj.Solution(firstArg, secondArg);
+        
+        Console.WriteLine(x);
+    }
+    
+    static void Print(object result, object expected)
+    {
+        if(expected is ICollection expectedCollection)
         {
-            Console.WriteLine(string.Join(", ", list));
+            var resultCollection = (ICollection) result;
+            Console.WriteLine($"Results:");
+            foreach (var pair in expectedCollection.Cast<object>().Zip(resultCollection.Cast<object>(), (e, r) => new { Expected = e, Result = r }))
+            {
+                Console.WriteLine($"Expected: {pair.Expected}, Result: {pair.Result}");
+            }
+            return;
         }
-
+        
+        Console.WriteLine($"Expected: {result}, Result: {expected}");
     }
 }
