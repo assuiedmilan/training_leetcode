@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Arrays.Stack;
+﻿namespace LeetCode.Stack.Extras;
 
 public class MinAddToMakeValid
 {
