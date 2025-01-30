@@ -21,4 +21,11 @@ public class ValidPalindromeTests
         var testObject = new ValidPalindrome125();
         return MeasureExecutionTime.Measure(() => testObject.IsPalindrome(s));
     }
+
+    [Test, TestCaseSource(nameof(TestCases))]
+    public bool TestSolution2(string s)
+    {
+        var testObject = new ValidPalindrome125();
+        return MeasureExecutionTime.Measure(() => testObject.IsPalindrome2(s));
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace LeetCode.Gen;
 
@@ -15,21 +16,40 @@ public class ValidPalindrome125
 
         while (l <= r)
         {
-            var leftChar = char.ToLower(characters[l]);
-            var rightChar = char.ToLower(characters[r]);
-
-            if (!char.IsAsciiLetterOrDigit(leftChar))
+            if (!char.IsLetterOrDigit(characters[l]))
             {
                 l++;
                 continue;
             }
-            if (!char.IsAsciiLetterOrDigit(rightChar))
+            if (!char.IsLetterOrDigit(characters[r]))
             {
                 r--;
                 continue;
             }
 
-            if (leftChar == rightChar)
+            if (char.ToLower(characters[l]) == char.ToLower(characters[r]))
+            {
+                l++;
+                r--;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public bool IsPalindrome2(string s)
+    {
+        var characters = s.ToLower().ToCharArray().Where(char.IsLetterOrDigit).ToArray();
+        var l = 0;
+        var r = characters.Length - 1;
+
+        while (l <= r)
+        {
+            if (characters[l] == characters[r])
             {
                 l++;
                 r--;
