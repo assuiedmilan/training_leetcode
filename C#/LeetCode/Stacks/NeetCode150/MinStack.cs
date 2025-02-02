@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LeetCode.Stack.NeetCode150;
+namespace LeetCode.Stacks.NeetCode150;
 
 /*
  * Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
