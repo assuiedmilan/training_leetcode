@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using LeetCode.Arrays.Extras;
 using LeetCode.Bitmasks.Extras;
 
 namespace Sandbox;
@@ -7,11 +8,11 @@ public class Program
 {
     static void Main(string[] args)
     {
-        var testObj = new MinimizeXor();
-        const int firstArg = 3;
+        var testObj = new LongestMonotonicSubarray();
+        int[] firstArg = [1,9,7,1];
         const int secondArg = 5;
 
-        var x = testObj.Solution(firstArg, secondArg);
+        var x = testObj.Solution(firstArg);
         
         Console.WriteLine(x);
     }
