@@ -8,8 +8,8 @@ public class Program
 {
     static void Main(string[] args)
     {
-        var testObj = new LongestMonotonicSubarray();
-        int[] firstArg = [1,9,7,1];
+        var testObj = new MaximumAscendingSubarraySum();
+        int[] firstArg = [-100, -140, -80];
         const int secondArg = 5;
 
         var x = testObj.Solution(firstArg);
