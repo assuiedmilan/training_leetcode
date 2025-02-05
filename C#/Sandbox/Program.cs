@@ -8,11 +8,11 @@ public class Program
 {
     static void Main(string[] args)
     {
-        var testObj = new MaximumAscendingSubarraySum();
+        var testObj = new CheckIfOneStringSwapCanMakeStringsEquals();
         int[] firstArg = [-100, -140, -80];
         const int secondArg = 5;
 
-        var x = testObj.Solution(firstArg);
+        var x = testObj.Solution("acd", "adc");
         
         Console.WriteLine(x);
     }
