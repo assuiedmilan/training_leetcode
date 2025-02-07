@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LeetCode.Stack.NeetCode150;
+namespace LeetCode.Stacks.NeetCode150;
 
 /*
  * You are keeping the scores for a baseball game with strange rules. At the beginning of the game, you start with an empty record.

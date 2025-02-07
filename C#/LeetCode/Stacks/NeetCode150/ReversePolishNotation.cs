@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LeetCode.Stack.NeetCode150;
+namespace LeetCode.Stacks.NeetCode150;
 
 /*
  * You are given an array of strings tokens that represents a valid arithmetic expression in Reverse Polish Notation.

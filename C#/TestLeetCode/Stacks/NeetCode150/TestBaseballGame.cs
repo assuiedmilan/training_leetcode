@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using LeetCode.Stack.NeetCode150;
+using LeetCode.Stacks.NeetCode150;
 using NUnit.Framework;
 
-namespace TestLeetCode.Stack.NeetCode150;
+namespace TestLeetCode.Stacks.NeetCode150;
 
 public class TestBaseballGame
 {
