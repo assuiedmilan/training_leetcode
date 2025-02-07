@@ -8,13 +8,13 @@ public class Program
 {
     static void Main(string[] args)
     {
-        var testObj = new CheckIfOneStringSwapCanMakeStringsEquals();
+        var testObj = new NumberOfDistinctColorsAmongBalls();
         int[] firstArg = [-100, -140, -80];
         const int secondArg = 5;
 
-        var x = testObj.Solution("acd", "adc");
-        
-        Console.WriteLine(x);
+        var x = testObj.Solution(4, [[1,4], [2, 5], [2,3], [0, 2]]);
+
+        Print(x, new int[]{1, 2, 2, 3});
     }
     
     static void Print(object result, object expected)
