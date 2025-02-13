@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using LeetCode.Arrays.Extras;
 using LeetCode.Bitmasks.Extras;
+using LeetCode.Strings;
+using LeetCode.TwoPointers.Extras;
+using LeetCode.TwoPointers.Neetcode;
 
 namespace Sandbox;
 
@@ -8,13 +11,12 @@ public class Program
 {
     static void Main(string[] args)
     {
-        var testObj = new NumberOfDistinctColorsAmongBalls();
-        int[] firstArg = [-100, -140, -80];
-        const int secondArg = 5;
+        var testObj = new MergeSortedArray();
 
-        var x = testObj.Solution(4, [[1,4], [2, 5], [2,3], [0, 2]]);
+        int[] num1 = [1, 2, 3, 4, 0, 0, 0];
+        testObj.Solution(num1, 4, [3,5,7], 3);
 
-        Print(x, new int[]{1, 2, 2, 3});
+        
     }
     
     static void Print(object result, object expected)
@@ -30,6 +32,6 @@ public class Program
             return;
         }
         
-        Console.WriteLine($"Expected: {result}, Result: {expected}");
+        Console.WriteLine($"Expected: {expected}, Result: {result}");
     }
 }
