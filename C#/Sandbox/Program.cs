@@ -1,22 +1,17 @@
 ﻿using System.Collections;
-using LeetCode.Arrays.Extras;
-using LeetCode.Bitmasks.Extras;
-using LeetCode.Strings;
-using LeetCode.TwoPointers.Extras;
-using LeetCode.TwoPointers.Neetcode;
+using LeetCode.Neetcode;
+using LeetCode.Others;
 
 namespace Sandbox;
 
-public class Program
+public static class Program
 {
     static void Main(string[] args)
     {
         var testObj = new MergeSortedArray();
 
-        int[] num1 = [1, 2, 3, 4, 0, 0, 0];
+        var num1 = (int[])[1, 2, 3, 4, 0, 0, 0];
         testObj.Solution(num1, 4, [3,5,7], 3);
-
-        
     }
     
     static void Print(object result, object expected)
