@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LeetCode.Others;
+namespace LeetCode.Neetcode;
 
 /* https://leetcode.com/problems/longest-common-prefix/ */
 public class LongestCommonPrefix

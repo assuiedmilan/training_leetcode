@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using LeetCode.Others;
+using LeetCode.Neetcode;
 using NUnit.Framework;
 using Sandbox;
 
