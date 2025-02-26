@@ -5,8 +5,17 @@ using Sandbox;
 
 namespace TestLeetCode;
 
+/* Copilot tests prompt:
+ Write unit tests for SingleNumbers, when you do:
+  
+ Use IEnumerable<TestCaseData> to generate the test cases When an argument is an array,
+ Use cast collection expression, such as (string[]) ["aa", "bb"]
+ Have a single TestSolution method</TestCaseData>
+ Use TestTwoSums as a reference
+ */
 public class TestTwoSums
 {
+
     static IEnumerable<TestCaseData> TestCases()
     {
         yield return new TestCaseData((int[]) [15, 11, 7, 2], 9).Returns((int[]) [2, 3]).SetName("SortedDecreasing");

@@ -11,10 +11,10 @@ public class TwoSum
 
         for (var i = 0; i < nums.Length; i++)
         {
-            var complement = target - nums[i]; //If this value is in the dict, it means that the sum of the two values is equal to the target.
-            if (complementDictionary.ContainsKey( nums[i]))
+            var complement = target - nums[i];
+            if (complementDictionary.TryGetValue( nums[i], out var value))
             {
-                return [complementDictionary[nums[i]], i];
+                return [value, i];
             }
             complementDictionary[complement] = i;
         }
