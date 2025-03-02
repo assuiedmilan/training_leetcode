@@ -20,7 +20,7 @@ public class LongestCommonPrefix
         {
             while (!strs[i].StartsWith(prefix, StringComparison.Ordinal))
             {
-                prefix = prefix.Substring(0, prefix.Length - 1);
+                prefix = prefix[..^1];
                 if (prefix == "") return "";
             }
         }

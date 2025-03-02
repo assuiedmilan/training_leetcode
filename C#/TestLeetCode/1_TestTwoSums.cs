@@ -6,10 +6,11 @@ using Sandbox;
 namespace TestLeetCode;
 
 /* Copilot tests prompt:
- Write unit tests for SingleNumbers, when you do:
-  
+ Write unit tests for the current file based on its filename, when you do:
+ 
+ Use file-scoped namespace 
  Use IEnumerable<TestCaseData> to generate the test cases When an argument is an array,
- Use cast collection expression, such as (string[]) ["aa", "bb"]
+ Use cast collection expression, such as (string[]) ["aa", "bb"], even if the argument is an array of arrays.
  Have a single TestSolution method</TestCaseData>
  Use TestTwoSums as a reference
  */

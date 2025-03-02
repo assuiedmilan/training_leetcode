@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LeetCode.Neetcode;
 
@@ -7,27 +8,26 @@ public class GenerateParenthesis
 {
     public IList<string> Solution(int n)
     {
+        if (n == 0) return [];
         List<string> result = [];
-        var stack = new char[2*n];
-
-        Backtrack('(', 1, 0);
-
+        Span<char> stack = stackalloc char[2*n];
+        
+        Backtrack('(', 1, 0, stack);
+        
         return result;
 
-        void Backtrack(char s, int openCount, int closeCount)
+        // ReSharper disable once InconsistentNaming
+        void Backtrack(char s, int openCount, int closeCount, Span<char> _stack)
         {
+            _stack[openCount + closeCount - 1] = s;
             if (openCount == n && closeCount == n)
             {
-                stack[openCount + closeCount -1 ] = s;
-                result.Add(new string(stack));
+                result.Add(new string(_stack));
                 return;
             }
-            if (s == ')' && openCount < closeCount) return;
-            if (openCount == n + 1 || closeCount == n + 1) return;
-
-            stack[openCount + closeCount -1 ] = s;
-            Backtrack('(', openCount+1, closeCount);
-            Backtrack(')', openCount, closeCount+1);
+            
+            if (openCount < n) { Backtrack('(', openCount + 1, closeCount, _stack);}
+            if (closeCount < openCount) { Backtrack(')', openCount, closeCount + 1, _stack);}
         }
     }
 }
