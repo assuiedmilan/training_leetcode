@@ -8,30 +8,31 @@ public class MergeSortedArray
     public void Solution(int[] nums1, int m, int[] nums2, int n)
     {
         if (n == 0) return;
-
-        var mPointer = m - 1;
+        
         var nPointer = n - 1;
+        var mPointer = m - 1;
 
-        for (var i = m + n - 1; i > -1; i--)
+        while (mPointer > -1 || nPointer > -1)
         {
-            if (nPointer == -1) return;
-
+            if (nPointer == -1) break;
             if (mPointer == -1)
             {
-                nums1[i] = nums2[nPointer--];
+                nums1[nPointer] = nums2[nPointer--];
                 continue;
             }
-            
-            if (nums1[mPointer] > nums2[nPointer])
+
+            var mValue = nums1[mPointer];
+            var nValue = nums2[nPointer];
+
+            if (mValue > nValue)
             {
-                nums1[i] = nums1[mPointer];
+                nums1[mPointer + nPointer + 1] = mValue;
                 mPointer--;
+                continue;
             }
-            else
-            {
-                nums1[i] = nums2[nPointer];
-                nPointer--;
-            }
+            nums1[mPointer + nPointer + 1] = nValue;
+            nPointer--;
+
         }
     }
 }
