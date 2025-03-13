@@ -23,7 +23,8 @@ public class ThreeSum
 
             while (left < right)
             {
-                if (nums[left] > target) break;
+
+                
                 var current = nums[left] + nums[right];
 
                 if (current == target)
