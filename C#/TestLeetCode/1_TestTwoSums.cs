@@ -8,11 +8,15 @@ namespace TestLeetCode;
 /* Copilot tests prompt:
  Write unit tests for the current file based on its filename, when you do:
  
- Use file-scoped namespace 
- Use IEnumerable<TestCaseData> to generate the test cases When an argument is an array,
- Use cast collection expression, such as (string[]) ["aa", "bb"], even if the argument is an array of arrays.
- Have a single TestSolution method</TestCaseData>
- Use TestTwoSums as a reference
+ - Use file-scoped namespace 
+ 
+ - Use IEnumerable<TestCaseData> to generate the test cases When an argument is an array,
+ 
+ - Use cast collection expression, such as (string[]) ["aa", "bb"], or (IList<int[]>) [[-4, 0, 1, 2], [-1, -1, 0, 1]]
+ 
+ - Have a single TestSolution method</TestCaseData>
+ 
+ - Use TestTwoSums as a reference
  */
 public class TestTwoSums
 {

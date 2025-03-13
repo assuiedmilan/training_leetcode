@@ -16,6 +16,8 @@ public class TestThreeSum
         yield return new TestCaseData((int[]) [1, 2, -2, -1]).Returns(new List<IList<int>>()).SetName("NoTriplets");
         yield return new TestCaseData((int[]) []).Returns(new List<IList<int>>()).SetName("EmptyInput");
         yield return new TestCaseData((int[]) [-2, 0, 1, 1, 2]).Returns((IList<IList<int>>) [[-2, 0, 2], [-2, 1, 1]]).SetName("MultipleTriplets");
+        yield return new TestCaseData((int[]) [-1,0,-5,-2,-2,-4,0,1,-2], -9).Returns((IList<int[]>) [[-5,-4,-1,1],[-5,-4,0,0],[-5,-2,-2,0],[-4,-2,-2,-1]]).SetName("TestCase247");
+
     }
 
     [Test, TestCaseSource(nameof(TestCases))]

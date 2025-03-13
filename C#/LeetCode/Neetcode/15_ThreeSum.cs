@@ -16,8 +16,6 @@ public class ThreeSum
         for (var i = 0; i < nums.Length - 2; i++)
         {
             if (nums[i] > 0) break;
-            if (i > 0 && nums[i] == nums[i - 1]) continue; //Avoid duplicates
-
             var target = -nums[i];
 
             var left = i + 1;
