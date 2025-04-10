@@ -27,15 +27,10 @@ public class BoatsSavePeople881
         {
             if (people[left] + people[right] <= limit)
             {
-                numberOfBoats++;
                 left++;
-                right--;
             }
-            else
-            {
-                right--;
-                numberOfBoats++;
-            }
+            right--;
+            numberOfBoats++;
         }
 
         return numberOfBoats;
