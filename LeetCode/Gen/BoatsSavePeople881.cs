@@ -18,11 +18,10 @@ public class BoatsSavePeople881
 {
     public int NumRescueBoats(int[] people, int limit)
     {
+        Array.Sort(people);
         var left = 0;
         var right = people.Length - 1;
         var numberOfBoats = 0;
-
-        Array.Sort(people);
 
         while (left <= right)
         {
@@ -32,7 +31,7 @@ public class BoatsSavePeople881
                 left++;
                 right--;
             }
-            else if (people[left] + people[right] > limit)
+            else
             {
                 right--;
                 numberOfBoats++;
