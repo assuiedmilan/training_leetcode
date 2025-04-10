@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Gen;
+﻿using System;
+
+namespace LeetCode.Gen;
 
 /*
  * https://leetcode.com/problems/boats-to-save-people/description/
@@ -16,7 +18,27 @@ public class BoatsSavePeople881
 {
     public int NumRescueBoats(int[] people, int limit)
     {
+        var left = 0;
+        var right = people.Length - 1;
+        var numberOfBoats = 0;
 
-        return 0;
+        Array.Sort(people);
+
+        while (left <= right)
+        {
+            if (people[left] + people[right] <= limit)
+            {
+                numberOfBoats++;
+                left++;
+                right--;
+            }
+            else if (people[left] + people[right] > limit)
+            {
+                right--;
+                numberOfBoats++;
+            }
+        }
+
+        return numberOfBoats;
     }
 }
