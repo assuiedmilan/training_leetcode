@@ -27,7 +27,7 @@ public class ContainerWater11
 
       while (left <= right)
       {
-          var area = Math.Abs(left - right) * Math.Min(height[left], height[right]);
+          var area = (right-left) * Math.Min(height[left], height[right]);
           maxArea = Math.Max(area, maxArea);
           if (height[left] < height[right])
           {
