@@ -6,7 +6,7 @@ using Sandbox;
 namespace TestLeetCode;
 
 /* Copilot tests prompt:
- Write unit tests for the current file based on its filename, when you do:
+Write unit tests for the current file based on its filename, when you do:
  
  - Use file-scoped namespace 
  
