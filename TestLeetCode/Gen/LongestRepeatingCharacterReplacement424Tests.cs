@@ -11,6 +11,8 @@ public class LongestRepeatingCharacterReplacement424Tests
     {
         yield return new TestCaseData("ABAB", 2).Returns(4).SetName("Example 1");
         yield return new TestCaseData("AABABBA", 1).Returns(4).SetName("Example 2");
+        yield return new TestCaseData("AAAA", 0).Returns(4).SetName("Example 3");
+        yield return new TestCaseData("A", 0).Returns(1).SetName("Example 4");
     }
 
     [Test, TestCaseSource(nameof(TestCases))]
