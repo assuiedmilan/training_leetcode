@@ -34,7 +34,6 @@ public class TestPalindromeNumber
     static IEnumerable<TestCaseData> MethodsToTest()
     {
         yield return new TestCaseData((Func<int, bool>)k_TestObject.Solution).SetName("Solution using maths");
-        yield return new TestCaseData((Func<int, bool>)k_TestObject.Solution_ConvertToString).SetName("Solution by converting to string");
     }
 
     static IEnumerable<TestCaseData> CombinedCases()

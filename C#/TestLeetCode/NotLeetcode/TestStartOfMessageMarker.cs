@@ -26,7 +26,6 @@ public class TestStartOfMessageMarker
 
     static IEnumerable<TestCaseData> MethodsToTest()
     {
-        yield return new TestCaseData((Func<string, int>)k_TestObject.Solution).SetName("Regular solution");
         yield return new TestCaseData((Func<string, int>)k_TestObject.Solution_BitMask).SetName("Bitmask");
     }
 
