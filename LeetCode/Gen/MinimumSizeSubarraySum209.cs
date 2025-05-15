@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Gen;
+﻿using System;
+
+namespace LeetCode.Gen;
 
 //https://leetcode.com/problems/minimum-size-subarray-sum/description/
 // 209. Minimum Size Subarray Sum
@@ -23,8 +25,29 @@
 
 public class MinimumSizeSubarraySum209
 {
- public int MinSubArrayLen(int target, int[] nums)
- {
-    return 0;
- }
+    public int MinSubArrayLen(int target, int[] nums)
+    {
+        var minLength = int.MaxValue;
+        var left = 0;
+        var right = 0;
+        var sum = 0;
+        var n = nums.Length;
+
+        while (right < n)
+        {
+            sum += nums[right];
+            right++;
+            while (sum >= target)
+            {
+                minLength = Math.Min(minLength, right - left);
+                sum -= nums[left];
+                left++;
+            }
+        }
+
+        if (minLength == int.MaxValue)
+            minLength = 0;
+
+        return minLength;
+    }
 }
