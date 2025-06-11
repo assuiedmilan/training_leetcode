@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 namespace LeetCode.Neetcode;
 
@@ -11,7 +11,7 @@ public class SortArray
 
         for (var i = nums.Length - 1; i > 0; i--) {
             (nums[0], nums[i]) = (nums[i], nums[0]);
-            MaxHeap(nums[..^(nums.Length - i)], 0);
+            MaxHeap(nums, i, 0);
         }
         
         return nums;
@@ -20,11 +20,10 @@ public class SortArray
     static void MaxHeap(int[] arr)
     {
         var lastNonleafNode = arr.Length / 2 - 1;
-        
-        for(var i = lastNonleafNode; i > -1; i--) MaxHeap(arr, i);
+        for(var i = lastNonleafNode; i > -1; i--) MaxHeap(arr, arr.Length, i);
     }
 
-    static void MaxHeap(int[] arr, int root)
+    static void MaxHeap(int[] arr, int heapifyLenght, int root)
     {
         while (true)
         {
@@ -32,8 +31,8 @@ public class SortArray
             var leftLeafIndex = 2 * root + 1;
             var rightLeafIndex = leftLeafIndex + 1;
 
-            if (leftLeafIndex < arr.Length && arr[leftLeafIndex] > arr[largestNodeIndex]) largestNodeIndex = leftLeafIndex;
-            if (rightLeafIndex < arr.Length && arr[rightLeafIndex] > arr[largestNodeIndex]) largestNodeIndex = rightLeafIndex;
+            if (leftLeafIndex < heapifyLenght && arr[leftLeafIndex] > arr[largestNodeIndex]) largestNodeIndex = leftLeafIndex;
+            if (rightLeafIndex < heapifyLenght && arr[rightLeafIndex] > arr[largestNodeIndex]) largestNodeIndex = rightLeafIndex;
 
             if (largestNodeIndex != root)
             {
