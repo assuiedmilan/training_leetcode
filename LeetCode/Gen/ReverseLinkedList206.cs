@@ -29,12 +29,6 @@ public class ReverseLinkedList206
             if (result == null)
             {
                 result = new ListNode(listNode.val);
-
-                if (list.Count > 1)
-                {
-                    result.next = list.ElementAt(list.Count - 2);
-                }
-
                 current = result;
             }
             else
