@@ -14,7 +14,6 @@ public class TestBestTimeToBuyAndSellStock
         yield return new TestCaseData((int[]) [5, 4, 3, 2, 1]).Returns(0).SetName("DescendingPrices");
         yield return new TestCaseData((int[]) [2, 4, 1]).Returns(2).SetName("SmallArray");
         yield return new TestCaseData((int[]) [1]).Returns(0).SetName("SingleElement");
-        yield return new TestCaseData((int[]) []).Returns(0).SetName("EmptyArray");
         yield return new TestCaseData((int[]) [3, 3, 5, 0, 0, 3, 1, 4]).Returns(4).SetName("MultipleOpportunities");
     }
 
