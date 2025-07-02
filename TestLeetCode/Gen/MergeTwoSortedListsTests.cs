@@ -12,6 +12,7 @@ public class MergeTwoSortedListsTests
         yield return new TestCaseData((int[])[1, 2, 4], (int[])[1, 3, 4]).Returns((int[])[1,1,2,3,4,4]).SetName("Example 1");
         yield return new TestCaseData((int[])[], (int[])[]).Returns((int[])[]).SetName("Example 2");
         yield return new TestCaseData((int[])[], (int[])[0]).Returns((int[])[0]).SetName("Example 3");
+        yield return new TestCaseData((int[])[-9,3], (int[])[5,7]).Returns((int[])[-9,3,5,7]).SetName("Example 4");
     }
 
     [Test, TestCaseSource(nameof(TestCases))]

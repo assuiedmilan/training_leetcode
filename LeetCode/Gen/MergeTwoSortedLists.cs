@@ -20,57 +20,35 @@ public class MergeTwoSortedLists
 
         while (list1 != null || list2 != null)
         {
-            if (list1 != null && list2 != null)
+            if (list1 == null)
+                currentNode = CreateCurrentNode(ref list2, currentNode);
+            else if(list2 == null)
+                currentNode = CreateCurrentNode(ref list1, currentNode);
+            else
             {
-                int currentValue;
                 if (list1.val <= list2.val)
-                {
-                    currentValue = list1.val;
-                    list1 = list1.next;
-                }
+                    currentNode = CreateCurrentNode(ref list1, currentNode);
                 else
-                {
-                    currentValue = list2.val;
-                    list2 = list2.next;
-                }
-
-                if (currentNode == null)
-                    currentNode = new ListNode(currentValue);
-                else
-                {
-                    currentNode.next = new ListNode(currentValue);
-                    currentNode = currentNode.next;
-                }
-            }
-            else if (list1 == null)
-            {
-                if (currentNode == null)
-                    currentNode = new ListNode(list2.val);
-                else
-                {
-                    currentNode.next = new ListNode(list2.val);
-                    currentNode = currentNode.next;
-                }
-
-                list2 = list2.next;
-            }
-            else //list2 == null
-            {
-                if (currentNode == null)
-                    currentNode = new ListNode(list1.val);
-                else
-                {
-                    currentNode.next = new ListNode(list1.val);
-                    currentNode = currentNode.next;
-                }
-
-                list1 = list1.next;
+                    currentNode = CreateCurrentNode(ref list2, currentNode);
             }
 
-            if(headResult == null)
-                headResult = currentNode;
+            headResult ??= currentNode;
         }
 
         return headResult;
+    }
+
+    static ListNode CreateCurrentNode(ref ListNode list, ListNode currentNode)
+    {
+        if (currentNode == null)
+            currentNode = new ListNode(list.val);
+        else
+        {
+            currentNode.next = new ListNode(list.val);
+            currentNode = currentNode.next;
+        }
+
+        list = list.next;
+        return currentNode;
     }
 }
