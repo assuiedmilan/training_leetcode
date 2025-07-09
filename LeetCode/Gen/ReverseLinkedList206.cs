@@ -53,3 +53,18 @@ public class ListNode
         this.next = next;
     }
 }
+
+public static class ListNodeUtilities
+{
+    public static ListNode MakeList(int[] values, int pos)
+    {
+        var nodes = new List<ListNode>();
+        foreach (var v in values) nodes.Add(new ListNode(v));
+        for (var i = 0; i < nodes.Count - 1; i++) nodes[i].next = nodes[i + 1];
+        if (pos >= 0 && pos < nodes.Count)
+            nodes[^1].next = nodes[pos];
+        return nodes.Count > 0 ? nodes[0] : null;
+    }
+}
+
+
