@@ -9,6 +9,8 @@ public class TestSortArray
 {
     static IEnumerable<TestCaseData> TestCases()
     {
+        yield return new TestCaseData((int[]) [6, 5, 4, 3, 2, 1]).Returns((int[]) [1, 2, 3, 4, 5, 6]).SetName("SixValues");
+        yield return new TestCaseData((int[]) [9, 4, 3 ,8, 10, 2, 5]).Returns((int[]) [2, 3, 4, 5, 8, 9, 10]).SetName("GeeksForGeeks");
         yield return new TestCaseData((int[]) [5, 2, 3, 1]).Returns((int[]) [1, 2, 3, 5]).SetName("UnsortedArray");
         yield return new TestCaseData((int[]) [5, 1, 1, 2, 0, 0]).Returns((int[]) [0, 0, 1, 1, 2, 5]).SetName("ArrayWithDuplicates");
         yield return new TestCaseData((int[]) []).Returns((int[]) []).SetName("EmptyArray");
