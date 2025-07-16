@@ -4,7 +4,7 @@ using NUnit.Framework;
 using Sandbox;
 
 namespace TestLeetCode.Gen;
-public class ValidPalindromeTests
+public class ValidPalindrome125Tests
 {
     static IEnumerable<TestCaseData> TestCases()
     {

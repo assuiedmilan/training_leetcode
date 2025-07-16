@@ -5,7 +5,7 @@ using Sandbox;
 
 namespace TestLeetCode.Gen;
 
-public class BaseballGameTests
+public class BaseballGame682Tests
 {
     static IEnumerable<TestCaseData> TestCases()
     {

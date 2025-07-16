@@ -5,7 +5,7 @@ using Sandbox;
 
 namespace TestLeetCode.Gen;
 
-public class SimplifyPathTests
+public class SimplifyPath71Tests
 {
     static IEnumerable<TestCaseData> TestCases()
     {

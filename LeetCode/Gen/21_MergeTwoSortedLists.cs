@@ -11,7 +11,7 @@
  *
  */
 
-public class MergeTwoSortedLists
+public class MergeTwoSortedLists21
 {
     public ListNode MergeTwoLists(ListNode list1, ListNode list2)
     {

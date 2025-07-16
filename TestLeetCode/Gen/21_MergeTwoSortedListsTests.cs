@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace TestLeetCode.Gen;
 
-public class MergeTwoSortedListsTests
+public class MergeTwoSortedLists21Tests
 {
     static IEnumerable<TestCaseData> TestCases()
     {
@@ -20,7 +20,7 @@ public class MergeTwoSortedListsTests
         var list1 = ListNodeTestsHelper.ArrayToLinkedList(list1Array);
         var list2 = ListNodeTestsHelper.ArrayToLinkedList(list2Array);
 
-        var testObject = new MergeTwoSortedLists();
+        var testObject = new MergeTwoSortedLists21();
         var mergedList = testObject.MergeTwoLists(list1, list2);
 
         return ListNodeTestsHelper.LinkedListToArray(mergedList);
