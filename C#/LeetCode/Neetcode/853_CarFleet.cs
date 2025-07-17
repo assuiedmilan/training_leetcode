@@ -1,30 +1,31 @@
-﻿namespace LeetCode.Neetcode;
+﻿using System;
+
+namespace LeetCode.Neetcode;
 
 /* https://leetcode.com/problems/car-fleet/description/ */
 public class CarFleet
 {
     public int Solution(int target, int[] position, int[] speed)
     {
-        var fleetSize = position.Length;
-        var car = 0;
-        var frontCar = 1;
+        var cars = new (int p, int s)[speed.Length];
+        double bn = -1;
+        var count = 0;
 
-        while (frontCar < position.Length)
+        for(var i=0; i<speed.Length; i++)
         {
-            var relativeSpeed = speed[frontCar] - speed[car];
-            var distance = position[frontCar] - position[car];
-
-            var timeToReach = (float)distance / relativeSpeed;
-            var timeToTarget = (float)(target - position[frontCar]) / speed[frontCar];
-
-            if (timeToReach <= timeToTarget)
-            {
-                fleetSize--;
-            }
-
-            car = frontCar;
-            frontCar++;
+            cars[i] = ((position[i], speed[i]));
         }
-        return fleetSize;
+
+        Array.Sort(cars,((c1, c2)=>c2.p.CompareTo(c1.p))); 
+        for(var i=0; i<speed.Length; i++)
+        {
+            var time = ((target-cars[i].p)/(double)cars[i].s);
+            if(time > bn)
+            {
+                bn = time;
+                count++;
+            }
+        }
+        return count;
     }    
 }
